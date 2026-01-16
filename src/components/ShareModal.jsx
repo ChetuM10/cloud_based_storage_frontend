@@ -279,10 +279,22 @@ export default function ShareModal({ item, onClose }) {
                       <p className="text-sm text-white truncate">
                         {link.publicUrl}
                       </p>
-                      <div className="flex items-center gap-2 text-xs text-dark-400">
+                      <div className="flex items-center gap-2 text-xs text-dark-400 flex-wrap">
                         {link.hasPassword && (
                           <span className="flex items-center gap-1">
                             <Lock className="w-3 h-3" /> Protected
+                          </span>
+                        )}
+                        {link.createdAt && (
+                          <span>
+                            Created:{" "}
+                            {new Date(link.createdAt).toLocaleString(
+                              undefined,
+                              {
+                                dateStyle: "medium",
+                                timeStyle: "short",
+                              }
+                            )}
                           </span>
                         )}
                         {link.expiresAt && (

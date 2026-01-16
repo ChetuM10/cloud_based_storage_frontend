@@ -56,6 +56,9 @@ export const filesAPI = {
   getFile: (id) => api.get(`/api/files/${id}`),
   updateFile: (id, data) => api.patch(`/api/files/${id}`, data),
   deleteFile: (id) => api.delete(`/api/files/${id}`),
+  getVersions: (id) => api.get(`/api/files/${id}/versions`),
+  revertToVersion: (id, versionId) =>
+    api.post(`/api/files/${id}/revert/${versionId}`),
 };
 
 // Folders API
@@ -93,6 +96,12 @@ export const utilsAPI = {
   permanentDelete: (data) => api.post("/api/trash/delete", data),
   getRecent: () => api.get("/api/recent"),
   getStorageUsage: () => api.get("/api/storage"),
+  getActivities: (limit) => api.get("/api/activities", { params: { limit } }),
+  // Tags
+  getTags: () => api.get("/api/tags"),
+  createTag: (data) => api.post("/api/tags", data),
+  deleteTag: (id) => api.delete(`/api/tags/${id}`),
+  updateResourceTags: (data) => api.put("/api/tags/resource", data),
 };
 
 export default api;

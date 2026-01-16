@@ -12,6 +12,7 @@ import {
   Settings,
   LogOut,
   Folder,
+  Activity,
 } from "lucide-react";
 import { useAuthStore } from "../stores/authStore";
 import { utilsAPI } from "../lib/api";
@@ -22,6 +23,8 @@ const navItems = [
   { path: "/starred", icon: Star, label: "Starred" },
   { path: "/recent", icon: Clock, label: "Recent" },
   { path: "/trash", icon: Trash2, label: "Trash" },
+  { path: "/storage", icon: Cloud, label: "Storage" },
+  { path: "/activity", icon: Activity, label: "Activity" },
 ];
 
 export default function Sidebar({ isOpen, onToggle }) {

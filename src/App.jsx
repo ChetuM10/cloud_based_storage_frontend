@@ -11,6 +11,8 @@ import Starred from "./pages/Starred";
 import Recent from "./pages/Recent";
 import Trash from "./pages/Trash";
 import PublicLink from "./pages/PublicLink";
+import StorageDashboard from "./pages/StorageDashboard";
+import ActivityLog from "./pages/ActivityLog";
 
 // Components
 import Layout from "./components/Layout";
@@ -94,6 +96,8 @@ function App() {
         <Route path="starred" element={<Starred />} />
         <Route path="recent" element={<Recent />} />
         <Route path="trash" element={<Trash />} />
+        <Route path="storage" element={<StorageDashboard />} />
+        <Route path="activity" element={<ActivityLog />} />
       </Route>
 
       {/* Catch all */}
